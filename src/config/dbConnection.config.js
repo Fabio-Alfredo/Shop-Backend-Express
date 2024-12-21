@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import { config } from "./config.js";
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
   username: config.db_user,
   password: config.db_password,
   database: config.db_name,
@@ -14,7 +14,7 @@ const sequelize = new Sequelize({
   //
 });
 
-const connectDb = async () => {
+export const connectDb = async () => {
 
   try {
     await sequelize.authenticate();
@@ -24,4 +24,3 @@ const connectDb = async () => {
   }
 };
 
-export default connectDb;
